@@ -1,3 +1,22 @@
+
+function updateClassBasedOnScreenWidth() {
+  const contentDiv = document.getElementById('content');
+
+  if (window.innerWidth > 600) {
+    contentDiv.classList.remove('calculator');
+    contentDiv.classList.add('calculator-win');
+  } else {
+    contentDiv.classList.remove('calculator-win');
+    contentDiv.classList.add('calculator');
+  }
+}
+
+// 初回実行
+updateClassBasedOnScreenWidth();
+
+// ウィンドウのリサイズ時に実行
+window.addEventListener('resize', updateClassBasedOnScreenWidth);
+
 let currentInput = "";
 let result = 0;
 
